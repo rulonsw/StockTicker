@@ -1,8 +1,15 @@
 #app {
-    font-family: "Droid Serif";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
-  }
+}
+
+body {
+  background-color: rgb(240, 240, 240);
+
+}
+div {
+  font-family: "Droid Serif";
+}

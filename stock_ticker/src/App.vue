@@ -3,7 +3,7 @@
 </head>
 <template>
   <div id="app">
-    <entry-header msg="Welcome to Your Vue.js App"/>
+    <entry-header/>
   </div>
 </template>
 
@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import 'styles/main.scss'
+@import "styles/main.scss";
 </style>

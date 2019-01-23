@@ -1,8 +1,8 @@
 <template>
   <div class="header-elements">
     <header>Stock Watcher</header>
-    <input v-model="message" placeholder="Enter stock symbol...">
-    <button class="add-button">Yo</button>
+    <input class="symbol-input" placeholder="Enter stock symbol...">
+    <button class="add-button">ADD</button>
   </div>
 </template>
 
@@ -14,6 +14,5 @@ export default {
 </script>
 
 <style lang="scss">
-	@import '../styles/header.scss'
+@import "../styles/header.scss";
 </style>
-
