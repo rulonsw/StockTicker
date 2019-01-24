@@ -2,14 +2,14 @@
   <div class="ticker-container">
     <div class="ticker-col" v-for="item in tickers" :key="item.symbol">
       <ticker-cell
-      :start-val="parseInt(item.startVal).toFixed(2)"
-      :daily-max="parseInt(item.dailyMax).toFixed(2)"
-      :daily-min="parseInt(item.dailyMin).toFixed(2)"
+      :start-val="parseFloat(item.startVal).toFixed(2)"
+      :daily-max="parseFloat(item.dailyMax).toFixed(2)"
+      :daily-min="parseFloat(item.dailyMin).toFixed(2)"
       :company-name="item.companyName"
       :symbol="item.symbol"
-      :delta-val="parseInt(item.deltaVal).toFixed(2)"
-      :delta-prcnt="parseInt(item.deltaPrcnt).toFixed(2)"
-      :curr-price="item.currPrice"></ticker-cell>
+      :delta-val="parseFloat(item.deltaVal).toFixed(2)"
+      :delta-prcnt="parseFloat(item.deltaPrcnt).toFixed(2)"
+      :curr-price="parseFloat(item.currPrice).toFixed(2)"></ticker-cell>
     </div>
   </div>
 </template>

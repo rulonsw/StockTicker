@@ -1,16 +1,19 @@
 .ticker-container {
     max-width: 1840px;
+    min-width:90%;
     min-height:1000px;
     display: inline-block;
     justify-content: center;
     padding: 0px 100px;
 }
 .ticker-col {
+    margin: 2.5%;
     max-height: 120px;
+    width:40%;
     display:inline-block;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 840px) {
     .ticker-container {
         width: 100%;
         box-sizing: border-box;

@@ -8,12 +8,7 @@
 <script>
 export default {
   name: "lineGauge",
-  props: {
-    min: Number,
-    max: Number,
-    ptr: Number,
-    symbol: String
-  },
+  props: ["min", "max", "ptr", "symbol"],
   computed: {},
   methods: {
     computePointerPosition() {

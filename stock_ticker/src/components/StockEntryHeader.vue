@@ -1,11 +1,11 @@
 <template>
   <div class="header-elements">
     <header>Stock Watcher</header>
-    <input v-model="symbolInput" class="symbol-input" placeholder="Enter stock symbol...">
+    <input v-model="symbolInput" class="symbol-input" v-on:keyup.enter="fetchDailyData(symbolInput)" placeholder="Enter stock symbol...">
     <button  
       v-on:click="fetchDailyData(symbolInput)" 
-      v-on:keyup.enter="fetchDailyData(symbolInput)" 
-      class="add-button">ADD
+      
+      class="add-button" :class="{disabled:(symbolInput === '')}">ADD
     </button>
   </div>
 </template>
@@ -27,7 +27,9 @@ export default {
   },
   methods: {
     fetchDailyData(sym) {
+      if (sym === "") return null;
       try {
+        this.symbolInput = "";
         return (
           axios
             .get(apiBaseURL, {
@@ -38,8 +40,6 @@ export default {
               }
             })
             .then(resp => {
-              // eslint-disable-next-line
-          // debugger;
               if (Object.keys(resp.data[responseBaseObj]).length !== 0) {
                 // Check for rate limiting
                 if (resp.data["Note"]) {
@@ -49,20 +49,18 @@ export default {
                 }
                 // this was a good request.
                 let baseObj = resp.data[responseBaseObj];
-                // eslint-disable-next-line
-            console.log('here')
                 this.$emit("request-accepted", {
                   // company name is not included in quote. I'll have to make another call.
                   companyName: "TODO",
                   symbol: baseObj["01. symbol"],
-                  dailyMax: parseInt(baseObj["03. high"]).toFixed(2),
-                  dailyMin: parseInt(baseObj["04. low"]).toFixed(2),
-                  currPrice: parseInt(baseObj["05. price"]).toFixed(2),
-                  startVal: parseInt(baseObj["02. open"]).toFixed(2),
-                  deltaVal: parseInt(baseObj["09. change"]).toFixed(2),
-                  deltaPrcnt: parseInt(
+                  dailyMax: parseFloat(baseObj["03. high"]).toFixed(2),
+                  dailyMin: parseFloat(baseObj["04. low"]).toFixed(2),
+                  currPrice: parseFloat(baseObj["05. price"]).toFixed(2),
+                  startVal: parseFloat(baseObj["02. open"]).toFixed(2),
+                  deltaVal: parseFloat(baseObj["09. change"]).toFixed(2),
+                  deltaPrcnt: parseFloat(
                     baseObj["10. change percent"].slice(0, -1)
-                  ).toFixed(2)
+                  ).toFixed(6)
                 });
               } else {
                 this.$emit("bad-request");
