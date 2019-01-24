@@ -23,15 +23,19 @@
 import lineGauge from "./LineGauge.vue";
 export default {
   name: "TickerCell",
-  props: [
-    "companyName",
-    "symbol",
-    "dailyMax",
-    "dailyMin",
-    "delta",
-    "currPrice",
-    "startVal"
-  ],
+  props: {
+    companyName : String,
+    symbol: String,
+    dailyMax: Number,
+    dailyMin: Number,
+    currPrice: Number,
+    startVal: Number
+  },
+  computed: {
+      // positive in terms of outcome (i.e., this stock didn't lose money today). net-zero counts as positive.
+      isPositive: () => this.delta() >= 0,
+      delta: () => (this.currPrice - this.startVal) * 100
+  },
   components: { lineGauge }
 };
 </script>

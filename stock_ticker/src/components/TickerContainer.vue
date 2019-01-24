@@ -18,7 +18,9 @@ export default {
   components: {
     TickerCell
   },
-  props: ["tickers"]
+  props: {
+    tickers: Array
+  }
 };
 </script>
 <style lang="scss">
