@@ -1,0 +1,17 @@
+.graph-line {
+  border-left: 4px solid gray;
+  height: 80px;
+  width:4px;
+  display:inline-block;
+  position: fixed;
+  top: 50%;
+  margin-top: -152px;
+}
+
+.graph-pointer {
+  display: flex;
+  float:left;
+}
+.graph-component {
+  padding-right: 8px;
+}

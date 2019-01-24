@@ -25,11 +25,23 @@ $d-s: "Droid Serif";
 .cell-right {
     width: 25%;
     height: 100%;
+    box-sizing:border-box;
+    border-style:solid;
+    float:right;
+}
+.cell-right-col-0 {
+    width:65%;
+    display:inline-flex;
+    justify-content: flex-end;
+}
+.cell-right-col-1 {
+    width: 35%;
+    height: 100%;
     float:right;
     display:flex;
     flex-direction: column;
+    align-content: flex-start;
     justify-content: space-between;
-    border-style: solid;
     box-sizing:border-box;
 }
 
@@ -47,10 +59,8 @@ $d-s: "Droid Serif";
 
 .daily-max {
     font-size: .9em;
-    text-align:right;
 
 }
 .daily-min {
-    text-align:right;
     font-size: .9em;
 }
