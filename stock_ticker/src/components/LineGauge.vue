@@ -21,8 +21,10 @@ export default {
     computePointerPosition() {
       // Due to the padding of the scale elements, 76px is the "magic number" in terms of aligning 
       // our ptr at the bottom. 
+      // // eslint-disable-next-line
+      // debugger;
       let range = this.max - this.min;
-      return 76 - ((this.ptr - range) / range * 76);
+      return 76 - ((this.ptr - this.min) / range * 76);
     }
   }
 }
