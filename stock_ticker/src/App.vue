@@ -3,8 +3,8 @@
 </head>
 <template>
   <div id="app">
-    <entry-header/>
-    <ticker-container :tickers="arrayOfNums" />
+    <entry-header v-on:request-accepted="pushToList" v-on:bad-request="badRequest"/>
+    <ticker-container :tickers="tickerReqResults" />
   </div>
 </template>
 
@@ -20,9 +20,23 @@ export default {
   },
   data: () => {
     return {
-      arrayOfNums: [1, 2, 3, 4, 5],
       tickerReqResults: []
     };
+  },
+  methods: {
+    pushToList: function(obj) {
+      this.tickerReqResults.forEach(element => {
+        if (element.symbol === obj.symbol) {
+          return null;
+        }
+      });
+      return this.tickerReqResults.push(obj);
+    },
+    badRequest: function() {
+      alert(
+        "The given symbol is not valid, or AlphaVantage's API response was unexpected.\nPlease try again."
+      );
+    }
   }
 };
 </script>
