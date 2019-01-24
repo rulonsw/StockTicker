@@ -1,7 +1,13 @@
 <template>
   <div class="ticker-container">
-    {{tickers}} <br/>
-    <ticker-cell></ticker-cell>
+    <ticker-cell
+      :start-val="300"
+      :daily-max="400"
+      :daily-min="200"
+      :company-name="'Google'"
+      :symbol="'GOOG'"
+      :delta="15.32"
+      :curr-price="706.32"></ticker-cell>
   </div>
 </template>
 
