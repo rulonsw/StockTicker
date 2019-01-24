@@ -25,12 +25,17 @@ export default {
   },
   methods: {
     pushToList: function(obj) {
-      // // eslint-disable-next-line
-      // debugger;
-      return this.tickerReqResults.includes(obj) ? null: this.tickerReqResults.push(obj);
+      this.tickerReqResults.forEach(element => {
+        if (element.symbol === obj.symbol) {
+          return null;
+        }
+      });
+      return this.tickerReqResults.push(obj);
     },
     badRequest: function() {
-      alert("The given symbol is not valid, or AlphaVantage's API response was unexpected.\nPlease try again.");
+      alert(
+        "The given symbol is not valid, or AlphaVantage's API response was unexpected.\nPlease try again."
+      );
     }
   }
 };

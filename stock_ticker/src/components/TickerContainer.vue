@@ -1,6 +1,6 @@
 <template>
   <div class="ticker-container">
-    <div class="ticker-row" v-for="(item, idx) in tickers" :key="item.symbol">
+    <div class="ticker-col" v-for="item in tickers" :key="item.symbol">
       <ticker-cell
       :start-val="parseInt(item.startVal).toFixed(2)"
       :daily-max="parseInt(item.dailyMax).toFixed(2)"
@@ -10,7 +10,6 @@
       :delta-val="parseInt(item.deltaVal).toFixed(2)"
       :delta-prcnt="parseInt(item.deltaPrcnt).toFixed(2)"
       :curr-price="item.currPrice"></ticker-cell>
-      <br v-if="idx % 3 === 0"/>
     </div>
   </div>
 </template>
