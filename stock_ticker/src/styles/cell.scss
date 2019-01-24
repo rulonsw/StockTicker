@@ -1,0 +1,56 @@
+$d-s: "Droid Serif";
+
+.ticker-cell {
+    font-family: $d-s;
+    min-width: 400px;
+    height: 100px;
+    padding: 4px;
+    margin: 4px;
+    display: inline-block;
+    border-style: solid;
+    
+}
+.cell-left {
+    vertical-align: top;
+    text-align: left;
+    width: 75%;
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    // justify-content:space-between;
+    float:left;
+    box-sizing:border-box;
+    border-style: solid;
+}
+.cell-right {
+    width: 25%;
+    height: 100%;
+    float:right;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-style: solid;
+    box-sizing:border-box;
+}
+
+.company-name {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 4px 4px 0px 4px;
+    color: darkslategrey;
+}
+.company-symbol {
+    font-size: .75em;
+    padding: 0px 4px 16px 4px;
+    color: grey;
+}
+
+.daily-max {
+    font-size: .9em;
+    text-align:right;
+
+}
+.daily-min {
+    text-align:right;
+    font-size: .9em;
+}

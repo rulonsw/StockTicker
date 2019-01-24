@@ -1,18 +1,20 @@
 <template>
   <div class="ticker-container">
-    
+    {{tickers}} <br/>
+    <ticker-cell></ticker-cell>
   </div>
 </template>
 
 <script>
-
-const TickerBodyView = {
-  props: {
-    msg: String
+import TickerCell from "./TickerCell.vue";
+export default {
+  name: "TickerContainer",
+  components: {
+    TickerCell
   },
-
+  props: ["tickers"]
 };
-
-export {TickerBodyView};
 </script>
-
+<style lang="scss">
+@import "../styles/container.scss";
+</style>
