@@ -1,0 +1,17 @@
+.graph-line {
+  border-left: 2px solid rgb(180, 180, 180);
+  height: 80px;
+  width:4px;
+  display:inline-block;
+  position: relative;
+  top: 10%;
+}
+
+.graph-pointer {
+  display: flex;
+  float:left;
+  color: rgb(180, 180, 180);
+}
+.graph-component {
+  padding-right: 8px;
+}
