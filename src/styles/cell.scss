@@ -1,0 +1,89 @@
+$d-s: "Droid Serif";
+
+.ticker-cell {
+    font-family: $d-s;
+    width: 100%;
+    height: 100px;
+    padding: 4px;
+    margin: 4px;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    
+}
+.current-price {
+    font-size: 1.25em;
+    padding-bottom: 4px;
+}
+.cell-left {
+    vertical-align: top;
+    text-align: left;
+    width: 65%;
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    // justify-content:space-between;
+    float:left;
+    box-sizing:border-box;
+}
+.cell-right {
+    width: 35%;
+    height: 100%;
+    box-sizing:border-box;
+    float:right;
+}
+.cell-right-col-0 {
+    width:55%;
+    display:inline-flex;
+    justify-content: flex-end;
+}
+.cell-right-col-1 {
+    width: 45%;
+    height: 100%;
+    float:right;
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: space-between;
+    box-sizing:border-box;
+}
+
+.company-name {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 4px 4px 0px 4px;
+    color: darkslategrey;
+}
+.company-symbol {
+    font-size: .75em;
+    padding: 0px 4px 16px 4px;
+    color: grey;
+}
+
+.daily-max {
+    font-size: .9em;
+
+}
+.daily-min {
+    font-size: .9em;
+}
+.red-text {
+    color: red;
+}
+.green-text {
+    color: green;
+}
+
+@media (max-width: 840px) {
+    .ticker-cell {
+        font-family: $d-s;
+        width: 100%;
+        height: 100px;
+        padding: 4px;
+        margin: 4px;
+        display: inline-block;
+        border: 1px solid lightgrey;
+        border-radius: 4px;
+        
+    }
+}
