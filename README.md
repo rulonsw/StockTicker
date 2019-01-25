@@ -6,6 +6,12 @@
 npm install
 ```
 
+### Run in dev mode with hot-reloading (you'll want to do this one)
+
+```
+npm run serve
+```
+
 ### Compiles and minifies for production
 
 ```
